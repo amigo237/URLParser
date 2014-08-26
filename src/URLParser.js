@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * URLParser v1.0.0
  * Copyright (c) 2013, in shenzhen. luzhao@xunlei.com
  * This plugin uses Steven Levithan's excellent Regex URI parser.
