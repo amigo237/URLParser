@@ -54,17 +54,17 @@
                 queryData[$1] = raw ? $2 : decodeURIComponent($2);
             } 
         });
-        return key ? queryData[key] : queryData;
+        return key ? (queryData[key] || "") : queryData;
     };
 
-    URLParser.prototype.getHashData = function (key) {
+    URLParser.prototype.getHashData = function (key, raw) {
         var hashData = {};
         this.anchor.replace(URLParser.options.query, function ($0, $1, $2) {
             if ($1) {
-                hashData[$1] = $2;
+                hashData[$1] = raw ? $2 : decodeURIComponent($2);
             } 
         });
-        return key ? hashData[key] : hashData;
+        return key ? (hashData[key] || "") : hashData;
     };
     
     URLParser.prototype.setQuery = function (data) {
